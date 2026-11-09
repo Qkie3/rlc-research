@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RLC-research</title>
+<meta name="robots" content="noindex">
+<style>
+  :root { --tekst: #1f2328; --svag: #57606a; --bund: #ffffff; --kant: #d0d7de; }
+  @media (prefers-color-scheme: dark) { :root { --tekst: #e6edf3; --svag: #9198a1; --bund: #0d1117; --kant: #30363d; } }
+  body { margin: 0; background: var(--bund); color: var(--tekst); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 40px 16px 64px; }
+  h1 { font-size: 26px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 32px 0 8px; }
+  p, li { margin: 0 0 10px; }
+  .svag { color: var(--svag); }
+  pre { border: 1px solid var(--kant); border-radius: 6px; padding: 12px; overflow-x: auto; font-size: 15px; }
+  hr { border: 0; border-top: 1px solid var(--kant); margin: 40px 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>RLC-research</h1>
+<p class="svag">Den crawler, der står i jeres serverlog som <code>RLC-research/1.0</code>.</p>
+
+<h2>Hvem er det</h2>
+<p>Rasmus Lind Christensen, Horsens. Jeg hjælper små og mellemstore virksomheder med at blive fundet på Google og i AI-svar. Crawleren læser kundens eget website og, i lille omfang, offentlige sider hos andre i samme marked.</p>
+
+<h2>Hvad den gør</h2>
+<ul>
+  <li>Læser robots.txt før alt andet og følger den.</li>
+  <li>Holder mindst 2 sekunders pause mellem kald på kundens eget site og mindst 10 sekunder på alle andre sites.</li>
+  <li>Henter højst 20 sider fra et site, der ikke er kundens.</li>
+  <li>Følger Crawl-delay i robots.txt op til 30 sekunder.</li>
+  <li>Stopper, hvis robots.txt svarer med en serverfejl.</li>
+  <li>Logger ikke ind, udfylder ingen formularer og omgår ingen CAPTCHA.</li>
+  <li>Gemmer ikke navne fra anmeldelser.</li>
+</ul>
+
+<h2>Sådan siger I nej</h2>
+<p>Skriv dette i robots.txt, så kommer crawleren ikke igen:</p>
+<pre>User-agent: RLC-research
+Disallow: /</pre>
+
+<h2>Kontakt</h2>
+<p>Rasmus Lind Christensen, tlf. 42 76 33 40.</p>
+
+<hr>
+
+<h2 lang="en">In English</h2>
+<p lang="en">RLC-research is a small crawler run by Rasmus Lind Christensen in Horsens, Denmark, for search and AI-visibility audits. It reads robots.txt first and obeys it, waits at least 2 seconds between requests on a client's own site and at least 10 seconds elsewhere, fetches at most 20 pages from any site that is not the client's, honours Crawl-delay up to 30 seconds, never logs in or bypasses a CAPTCHA, and does not store reviewer names. To block it, add <code>User-agent: RLC-research</code> and <code>Disallow: /</code> to robots.txt. Contact: phone +45 42 76 33 40.</p>
+</main>
+</body>
+</html>
